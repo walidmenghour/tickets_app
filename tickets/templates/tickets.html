@@ -15,7 +15,7 @@
     </p>
     {% for ticket in tickets %}
 
-        {% if ticket.submitter == "Walid" %}
+        {% if ticket.submitter == "admin" %}
         <div>    
             <h4 style="color:blue;">Submitter : 
                 {{ticket.submitter}}
@@ -31,8 +31,8 @@
         body : <p>{{ticket.body }} </p>
         Created at : {{ticket.created_at}}
         </div>
-    
         {% endif %}
+        <hr/>
     {% endfor %}
 </body>
 </html>
