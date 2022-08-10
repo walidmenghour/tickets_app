@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets </title>
+</head>
+<body>
+    <h1> 
+   View Tickets !!
+    </h1>
+    <p>
+        the first ticket was submitted bt "{{tickets.0.submitter}}" and has the body {{tickets.0.body}}
+    </p>
+    {% for ticket in tickets %}
+
+        {% if ticket.submitter == "Walid" %}
+        <div>    
+            <h4 style="color:blue;">Submitter : 
+                {{ticket.submitter}}
+            </h4>
+        body : <p>{{ticket.body | safe }} </p>
+        Created at : {{ticket.created_at}}
+        </div>
+            {% else %}
+        <div>    
+            <h4 style="color:red;">Submitter : 
+                {{ticket.submitter}}
+            </h4>
+        body : <p>{{ticket.body }} </p>
+        Created at : {{ticket.created_at}}
+        </div>
+    
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
